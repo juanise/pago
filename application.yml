@@ -1,0 +1,41 @@
+#server:
+#  port: 15262
+#  error.whitelabel.enabled: false
+#  tomcat:
+#    accesslog.enabled: true
+#    max-threads: 30
+#  servlet.context-path: /devicescacheupdater
+    
+#logging:
+#  level:
+#    org.springframework.web: INFO
+#    org.hibernate: ERROR
+#    es.fermax.logging.aop: DEBUG
+#  file: "target/devicecacheupdater-service.log"
+server:
+  port: 8082
+  tomcat:
+    max-threads: 30
+    accesslog.enabled: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+# Specify the DNS URI of your Redis cache.
+spring:
+  rabbitmq:
+    host: ${RABBIT_HOST:localhost}
+    virtual-host: ${RABBIT_VHOST:distribuidos}
+    port: 5672
+    username: ${RABBITMQ_USER_ROOT:twcam-pls}
+    password: ${RABBITMQ_PWD_ROOT:twcam-pls}
+
+rabbitmq:
+  exchange_name:
+    pago: pago-exchange-distribuidos
