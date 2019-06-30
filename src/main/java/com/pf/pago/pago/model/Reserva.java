@@ -15,11 +15,13 @@ public class Reserva {
 
     private Date fechaReserva;
 
-    private Boolean costoReserva;
+    private Integer costoReserva;
 
     private String numeroAsiento;
 
     private String estadoReserva;
+    
+    private Pasajero pasajero;
 
     private AgenciaViajes agenciaViajes;
 
