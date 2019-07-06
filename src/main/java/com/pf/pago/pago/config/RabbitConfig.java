@@ -19,7 +19,7 @@ import org.springframework.messaging.handler.annotation.support.DefaultMessageHa
 @Configuration
 public class RabbitConfig implements RabbitListenerConfigurer {
     public static final String COLA_PAGADO = "queue.pago.peticion";
-    @Value("{rabbitmq.exchange_name.pago}")
+    @Value("${rabbitmq.exchange_name.pago}")
     private String pagoExchange;
 
     @Bean

@@ -14,7 +14,8 @@ CONTAINER="proyecto1-proyecto1-api-pago"
     --hostname $CONTAINER \
     --name $CONTAINER \
     -p 8082:8082 \
-    -e SERVER_NAME='mysql' \
+    --network=backend
+    -e RABBIT_HOST:rabbitmq \
     ${IMAGE}:${TAG}
 
 STARTED=$(docker inspect --format="{{ .State.StartedAt }}" $CONTAINER)
